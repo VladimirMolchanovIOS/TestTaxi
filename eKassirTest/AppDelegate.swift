@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        initMainWindow()
+        loadOrderListController()
         return true
     }
 
@@ -40,7 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func initMainWindow() {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.backgroundColor = UIColor.whiteColor()
+    }
+    
+// MARK: - RootViewController
+    func loadOrderListController() {
+        let orderListController = OrderListViewController()
+        let navController = UINavigationController(rootViewController: orderListController)
+        self.window!.rootViewController = navController
+        self.window!.makeKeyAndVisible()
+    }
+    
 
 }
 

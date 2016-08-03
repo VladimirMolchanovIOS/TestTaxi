@@ -1,0 +1,6 @@
+framework module Pods_eKassirTest {
+  umbrella header "Pods-eKassirTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
